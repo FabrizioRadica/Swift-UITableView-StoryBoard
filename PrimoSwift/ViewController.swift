@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet var tableView : UITableView
     
-    var items: String[] = ["Primo", "Secondo", "terzo"]
+    var items:Dictionary<String,String>=["Pizza Margherita":"Tomato, mozzarella, oregano ","Pizza viennese":"tomato, mozzarella, German sausage, oregano, oil", "Pizza capricciosa":"mozzarella, tomato, mushrooms, artichokes, cooked ham, olives, oil"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:customCell = self.tableView.dequeueReusableCellWithIdentifier("miaCella") as customCell
-        cell.mioTesto.text = self.items[indexPath.row]
+        let menusPizza=Array(items.keys)
+        let menusingredients=Array(items.values)
+        
+        cell.mioTesto.text =  menusPizza[indexPath.row]
+        cell.mioSubtitle.text = menusingredients[indexPath.row];
         return cell
     }
     
