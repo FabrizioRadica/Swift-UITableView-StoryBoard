@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4986B504193DF01E00DC86FC /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B503193DF01E00DC86FC /* myViewController.swift */; };
 		4986B508193E46E000DC86FC /* pizza-patriottica.png in Resources */ = {isa = PBXBuildFile; fileRef = 4986B507193E46E000DC86FC /* pizza-patriottica.png */; };
+		4986B50B193E614C00DC86FC /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B50A193E614C00DC86FC /* loadJson.swift */; };
+		4986B50D193E665F00DC86FC /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986B50C193E665F00DC86FC /* file.json */; };
 		49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE76193DC413007CE996 /* AppDelegate.swift */; };
 		49FFEE79193DC413007CE996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE78193DC413007CE996 /* ViewController.swift */; };
 		49FFEE7C193DC413007CE996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFEE7A193DC413007CE996 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		4986B503193DF01E00DC86FC /* myViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
 		4986B507193E46E000DC86FC /* pizza-patriottica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza-patriottica.png"; sourceTree = SOURCE_ROOT; };
+		4986B50A193E614C00DC86FC /* loadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
+		4986B50C193E665F00DC86FC /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = SOURCE_ROOT; };
 		49FFEE71193DC413007CE996 /* PrimoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFEE75193DC413007CE996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFEE76193DC413007CE996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		4986B509193E46E500DC86FC /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				4986B50C193E665F00DC86FC /* file.json */,
 				4986B507193E46E000DC86FC /* pizza-patriottica.png */,
 			);
 			name = resources;
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				4986B509193E46E500DC86FC /* resources */,
+				4986B50A193E614C00DC86FC /* loadJson.swift */,
 				49FFEE76193DC413007CE996 /* AppDelegate.swift */,
 				49FFEE78193DC413007CE996 /* ViewController.swift */,
 				49FFEE95193DD150007CE996 /* customCell.swift */,
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FFEE7C193DC413007CE996 /* Main.storyboard in Resources */,
+				4986B50D193E665F00DC86FC /* file.json in Resources */,
 				49FFEE7E193DC413007CE996 /* Images.xcassets in Resources */,
 				4986B508193E46E000DC86FC /* pizza-patriottica.png in Resources */,
 			);
@@ -228,6 +235,7 @@
 			files = (
 				49FFEE79193DC413007CE996 /* ViewController.swift in Sources */,
 				49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */,
+				4986B50B193E614C00DC86FC /* loadJson.swift in Sources */,
 				4986B504193DF01E00DC86FC /* myViewController.swift in Sources */,
 				49FFEE96193DD150007CE996 /* customCell.swift in Sources */,
 			);
