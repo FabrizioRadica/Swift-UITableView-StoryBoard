@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="627" y="229"/>
         </scene>
-        <!--View Controller-->
+        <!--My View Controller-->
         <scene sceneID="6vF-uk-4oA">
             <objects>
-                <viewController id="wt1-1o-yeH" sceneMemberID="viewController">
+                <viewController id="wt1-1o-yeH" customClass="myViewController" customModule="PrimoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2o6-hy-Sut"/>
                         <viewControllerLayoutGuide type="bottom" id="aT3-hc-Pqt"/>
@@ -77,7 +77,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wowow swift :)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvC-fU-99e">
-                                <rect key="frame" x="67" y="229" width="114" height="21"/>
+                                <rect key="frame" x="20" y="229" width="114" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <connections>
+                        <segue destination="d38-nG-0mc" kind="show" identifier="buttonPressedView" id="frl-r3-isR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-jH-Lzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1247" y="232"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VVF-3E-rdu">
+            <objects>
+                <viewController id="d38-nG-0mc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IA8-oF-sqj"/>
+                        <viewControllerLayoutGuide type="bottom" id="DSV-Rf-bfh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Yk-aT-NBx">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ouuuyeah! Button pressed :D" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrj-Eh-w8U">
+                                <rect key="frame" x="25" y="229" width="224" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -87,9 +117,9 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-jH-Lzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IAs-lr-i4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1247" y="232"/>
+            <point key="canvasLocation" x="1763" y="231"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF7-Ng-FfS">

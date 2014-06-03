@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4986B504193DF01E00DC86FC /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B503193DF01E00DC86FC /* myViewController.swift */; };
 		49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE76193DC413007CE996 /* AppDelegate.swift */; };
 		49FFEE79193DC413007CE996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE78193DC413007CE996 /* ViewController.swift */; };
 		49FFEE7C193DC413007CE996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFEE7A193DC413007CE996 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4986B503193DF01E00DC86FC /* myViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
 		49FFEE71193DC413007CE996 /* PrimoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFEE75193DC413007CE996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFEE76193DC413007CE996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				49FFEE76193DC413007CE996 /* AppDelegate.swift */,
 				49FFEE78193DC413007CE996 /* ViewController.swift */,
 				49FFEE95193DD150007CE996 /* customCell.swift */,
+				4986B503193DF01E00DC86FC /* myViewController.swift */,
 				49FFEE7A193DC413007CE996 /* Main.storyboard */,
 				49FFEE7D193DC413007CE996 /* Images.xcassets */,
 				49FFEE74193DC413007CE996 /* Supporting Files */,
@@ -213,6 +216,7 @@
 			files = (
 				49FFEE79193DC413007CE996 /* ViewController.swift in Sources */,
 				49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */,
+				4986B504193DF01E00DC86FC /* myViewController.swift in Sources */,
 				49FFEE96193DD150007CE996 /* customCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +405,7 @@
 				49FFEE8F193DC413007CE996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49FFEE90193DC413007CE996 /* Build configuration list for PBXNativeTarget "PrimoSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +414,7 @@
 				49FFEE92193DC413007CE996 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

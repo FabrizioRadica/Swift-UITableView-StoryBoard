@@ -31,10 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
         performSegueWithIdentifier("miaview", sender: self.view)
         println("Hai selezionato: \(indexPath.row)!")
-        
     }
 
     override func didReceiveMemoryWarning() {
