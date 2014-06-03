@@ -13,10 +13,11 @@ Simple Tests of Swift Language (no Objective-C)
 + UITableView
 + UIImageView
 + NSData / NSUrl
++ NSJSONSerialization
 + customCell (UITableViewCell)
 + and more... :)
 
-Require:
+**Require:**
 OSX 10.9.3 and Xcode 6.x (beta at moment)
 
 Enjoy!
