@@ -26,6 +26,9 @@ Simple Tests of Swift Language (no Objective-C)
 OSX 10.9.3 and Xcode 6.x (beta at moment)
 
 <h1>LICENSE</h1>
-The content of this project itself is licensed under the Creative Commons Attribution 3.0 license, and the underlying source code used to format and display that content is licensed under the MIT license.
+The content of this project itself is licensed under the
+<a href="http://creativecommons.org/licenses/by/3.0/us/deed.en_US">Creative Commons Attribution 3.0 license</a>,
+and the underlying source code used to format and display that content
+is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
 
 Enjoy!
