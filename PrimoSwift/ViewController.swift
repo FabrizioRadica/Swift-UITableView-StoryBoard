@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="Home TableView"
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "customCell")
     }
     
@@ -31,6 +32,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.mioTesto.text =  menusPizza[indexPath.row]
         cell.mioSubtitle.text = menusingredients[indexPath.row];
+        cell.miaImmagine.image=UIImage(named: "pizza-patriottica.png")
         return cell
     }
     

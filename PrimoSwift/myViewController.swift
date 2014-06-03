@@ -14,24 +14,25 @@ class myViewController: UIViewController {
 
     //remember UIButton *myButton=[UIButton Alloc] initWith.. etc etc]? :D
     //now:
-    let myButton = UIButton(frame: CGRect(x: 10, y: 310, width: 120, height: 50))
+    let myButton = UIButton(frame: CGRect(x: 10, y: 250, width: 120, height: 64))
     let color = UIColor(red: 0.5, green: 0.0, blue: 0.5, alpha: 1.0)
     var mioUrl = "http://blog-it.hostelbookers.com/wp-content/uploads/2012/08/pizza-patriottica.png"
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title="DetailView"
+        
     //Image
         var imgURL: NSURL = NSURL(string: mioUrl)
         var imgData: NSData = NSData(contentsOfURL: imgURL)
-        let imageDetail=UIImageView(frame: CGRect(x: 0, y: 0, width: 320, height: 300))
+        let imageDetail=UIImageView(frame: CGRect(x: 0, y: 64, width: 320, height: 300))
         imageDetail.image=UIImage(data: imgData)
         self.view.addSubview(imageDetail)
         
     //Button
         let myControlEvt: UIControlEvents = UIControlEvents.TouchUpInside
         myButton.addTarget(self, action:Selector.convertFromStringLiteral("tappedButton:"), forControlEvents: myControlEvt)
-        myButton.setTitle("I'm a button", forState: UIControlState.Normal)
+        myButton.setTitle("I'm a button >", forState: UIControlState.Normal)
         myButton.backgroundColor=color
         // Obj-C: [self.view addSubview:myButton]
         self.view.addSubview(myButton)

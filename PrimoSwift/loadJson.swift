@@ -19,6 +19,7 @@ class loadjson: UIViewController,NSURLConnectionDelegate, NSURLConnectionDataDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title="JSON Credits"
         startConnectionAt("http://www.radicadesign.com/file.json")
     }
     
