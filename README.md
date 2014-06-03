@@ -6,8 +6,11 @@ Swift+UITableView+StoryBoard
 Simple Tests of Swift Language (no Objective-C)
 
 + UIButton Programmatically
++ UIControlEvents
++ Button Target
 + Dictionary and Arrays
 + Prepareforsegue
++ UITableView
 + customCell (UITableViewCell)
 
 Require:
