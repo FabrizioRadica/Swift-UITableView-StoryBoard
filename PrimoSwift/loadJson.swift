@@ -61,7 +61,6 @@ class loadjson: UIViewController,NSURLConnectionDelegate, NSURLConnectionDataDel
         
         _title.text=title
         _description.text=description
-        
     }
     
 }

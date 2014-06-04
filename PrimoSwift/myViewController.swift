@@ -17,10 +17,13 @@ class myViewController: UIViewController {
     let myButton = UIButton(frame: CGRect(x: 10, y: 250, width: 120, height: 64))
     let color = UIColor(red: 0.5, green: 0.0, blue: 0.5, alpha: 1.0)
     var mioUrl = "http://blog-it.hostelbookers.com/wp-content/uploads/2012/08/pizza-patriottica.png"
+    
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="DetailView"
+        
         
     //Image
         var imgURL: NSURL = NSURL(string: mioUrl)
