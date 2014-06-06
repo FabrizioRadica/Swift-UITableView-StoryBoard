@@ -17,43 +17,94 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var dataArray: NSArray = NSArray()
     
+    //load JSON From URL
+    var data: NSMutableData = NSMutableData()
+    func startConnectionAt(urlPath: String){
+        var url: NSURL = NSURL(string: urlPath)
+        var request: NSURLRequest = NSURLRequest(URL: url)
+        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)
+        connection.start()
+    }
     
+    func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
+        println("Connection failed.\(error.localizedDescription)")
+    }
+    
+    func connection(connection: NSURLConnection, didRecieveResponse response: NSURLResponse)  {
+        println("Recieved response")
+    }
+    
+    func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
+        self.data = NSMutableData()
+    }
+    
+    func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
+        self.data.appendData(data)
+    }
+    
+    func connectionDidFinishLoading(connection: NSURLConnection!) {
+        var dataAsString: NSString = NSString(data: self.data, encoding: NSUTF8StringEncoding)
+        var err: NSError
+        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        var results: NSArray = json["item"] as NSArray
+        self.dataArray = results
+        
+        tableView.reloadData()
+        println("eof...")
+    }
+    //end load JSONFrom URL
+    
+    
+    //load JSONFrom mainBundle
     func loadJSONFile(){
         var filePath=NSBundle.mainBundle().pathForResource("file", ofType: "json")
         var err: NSError
         var jsonData : NSData=NSData.dataWithContentsOfMappedFile(filePath) as NSData
         var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(jsonData as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         var results: NSArray = json["item"] as NSArray
-        self.dataArray = results  
+        self.dataArray = results
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Home TableView"
-        
-        loadJSONFile()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "customCell")
+        
+        
+        // **** TRY ONE!!! *****
+        //Load From URL...
+        startConnectionAt("http://www.radicadesign.com/demo/appswift01/file.json")
+        
+        //Load FROM mainBoundle...
+        //loadJSONFile()
+
     }
     
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        //return self.items.count;
         return self.dataArray.count;
     }
     
-    /* WIP ... ??!
-    func dispatch_async(queue: dispatch_queue_t!,((UInt) -> Void)!){
-        println("GCD")
-        
-    }*/
     
     func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell:customCell = self.tableView.dequeueReusableCellWithIdentifier("miaCella") as customCell
-        //let menusPizza=Array(items.keys)
-        //let menusingredients=Array(items.values)
+    
         var rowData: NSDictionary = dataArray[indexPath.row] as NSDictionary
-        cell.mioTesto.text = rowData["title"] as String
-        cell.mioSubtitle.text = rowData["subtitle"] as String;
-        cell.miaImmagine.image=UIImage(named: rowData["image"] as String)
+        var title=rowData["title"] as String
+        var subtitle=rowData["subtitle"] as String
+        var image=rowData["image"] as String
+        
+        //GDC
+        var queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
+        dispatch_async(queue, {
+            
+            cell.mioTesto.text = title
+            cell.mioSubtitle.text = subtitle
+
+            dispatch_async(dispatch_get_main_queue(), {
+                cell.miaImmagine.image=UIImage(named: image)
+                })
+            })
         return cell
     }
     
