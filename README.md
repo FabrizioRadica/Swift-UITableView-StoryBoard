@@ -6,6 +6,7 @@ Swift+UITableView+StoryBoard
 Simple Tests of Swift Language (no Objective-C)
 
 + UIButton Programmatically
++ GDC (Grand Dispatch Center) tnx to Dimitri Giani :)
 + UIControlEvents
 + Button Target
 + Dictionary and Arrays
@@ -16,7 +17,6 @@ Simple Tests of Swift Language (no Objective-C)
 + NSJSONSerialization
 + customCell (UITableViewCell)
 + and more... :)
-
 
 
 ![alt tag](http://www.radicadesign.com/swift_screen1.png)
