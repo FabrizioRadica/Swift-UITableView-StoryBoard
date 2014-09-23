@@ -23,7 +23,7 @@ Simple Tests of Swift Language (no Objective-C)
 ![alt tag](http://www.radicadesign.com/swift_screen2.png)
 
 <h1>Require</h1>
-OSX 10.9.3 and Xcode 6.x (beta at moment)
+Xcode 6.0.1 Final
 
 <h1>LICENSE</h1>
 The content of this project itself is licensed under the
