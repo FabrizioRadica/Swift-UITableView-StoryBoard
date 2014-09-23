@@ -11,11 +11,12 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet var tableView : UITableView
+    @IBOutlet var tableView : UITableView!
     
     //var items:Dictionary<String,String>=["Pizza Margherita":"Tomato, mozzarella, oregano ","Pizza viennese":"tomato, mozzarella, German sausage, oregano, oil", "Pizza capricciosa":"mozzarella, tomato, mushrooms, artichokes, cooked ham, olives, oil"]
     
     var dataArray: NSArray = NSArray()
+    
     
     //load JSON From URL
     var data: NSMutableData = NSMutableData()
@@ -59,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func loadJSONFile(){
         var filePath=NSBundle.mainBundle().pathForResource("file", ofType: "json")
         var err: NSError
-        var jsonData : NSData=NSData.dataWithContentsOfMappedFile(filePath) as NSData
+        var jsonData : NSData=NSData.dataWithContentsOfMappedFile(filePath!) as NSData
         var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(jsonData as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         var results: NSArray = json["item"] as NSArray
         self.dataArray = results
@@ -79,13 +80,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //loadJSONFile()
 
     }
-    
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count;
     }
     
-    
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:customCell = self.tableView.dequeueReusableCellWithIdentifier("miaCella") as customCell
     
         var rowData: NSDictionary = dataArray[indexPath.row] as NSDictionary
@@ -108,9 +108,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        performSegueWithIdentifier("miaview", sender: self.view)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Hai selezionato: \(indexPath.row)!")
+        performSegueWithIdentifier("miaview", sender: self.view)
     }
 
     override func didReceiveMemoryWarning() {

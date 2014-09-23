@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class customCell: UITableViewCell{
-    @IBOutlet var mioTesto : UILabel
-    @IBOutlet var mioSubtitle : UILabel
-    @IBOutlet var miaImmagine : UIImageView
+    @IBOutlet var mioTesto : UILabel!
+    @IBOutlet var mioSubtitle : UILabel!
+    @IBOutlet var miaImmagine : UIImageView!
 }

@@ -11,8 +11,8 @@ import UIKit
 
 class loadjson: UIViewController,NSURLConnectionDelegate, NSURLConnectionDataDelegate{
     
-    @IBOutlet var _title : UILabel
-    @IBOutlet var _description : UITextView
+    @IBOutlet var _title : UILabel!
+    @IBOutlet var _description : UITextView!
     
     var data: NSMutableData = NSMutableData()
     var dataArray: NSArray = NSArray()
