@@ -39,13 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!) {
-        self.data.appendData(data)
+            self.data.appendData(data)
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!) {
         var dataAsString: NSString = NSString(data: self.data, encoding: NSUTF8StringEncoding)
         var err: NSError
-        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
+        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         var results: NSArray = json["item"] as NSArray
         self.dataArray = results
         
@@ -67,13 +67,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Home TableView"
+        self.title="PIAZZA ITALIA"
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "customCell")
         
         
         // **** TRY ONE!!! *****
         //Load From URL...
-        startConnectionAt(kJSONUrl)
+            startConnectionAt(kJSONUrl)
         
         //Load FROM mainBoundle...
         //loadJSONFile()
@@ -85,19 +85,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:customCell = self.tableView.dequeueReusableCellWithIdentifier("miaCella") as customCell
-    
+        let identifier = "miaCella"
+        var cell: customCell! = self.tableView.dequeueReusableCellWithIdentifier(identifier ,forIndexPath: indexPath) as customCell
+
+        /*
+        if cell==nil {
+            cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? customCell
+        }*/
+        
         rowData = dataArray[indexPath.row] as NSDictionary
         var title=rowData["title"] as String
         var subtitle=rowData["subtitle"] as String
         var image=rowData["thumb"] as String
-
-        cell.mioTesto.text = title
-        cell.mioSubtitle.text = subtitle
+        
         
         var imageUrl = NSURL(string: image)
         var request = NSURLRequest(URL: imageUrl)
         var requestQueue : NSOperationQueue = NSOperationQueue()
+        
+        cell.miaImmagine.alpha=0.0
+        cell.mioTesto.alpha=0.0
+        cell.mioSubtitle.alpha=0.0
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
             {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in
                 if error != nil {
@@ -105,14 +114,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
                 else {
                     dispatch_async(dispatch_get_main_queue(), {
+                        cell.mioTesto.text = title
+                        cell.mioSubtitle.text = subtitle
 
-                        cell.miaImmagine.alpha=0.0
                         cell.miaImmagine.image=UIImage(data: responseData)
                         UIView.animateWithDuration(1.0,
                             delay: 0.0,
                             options: .CurveEaseInOut,
                             animations: {
                                 cell.miaImmagine.alpha=1.0
+                                cell.mioTesto.alpha=1.0
+                                cell.mioSubtitle.alpha=1.0
                             },
                             completion: { finished in
 

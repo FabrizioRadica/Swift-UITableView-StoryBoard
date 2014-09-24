@@ -13,4 +13,30 @@ class customCell: UITableViewCell{
     @IBOutlet var mioTesto : UILabel!
     @IBOutlet var mioSubtitle : UILabel!
     @IBOutlet var miaImmagine : UIImageView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+        // Initialization code
+    }
+
+    func setup(){
+        self.miaImmagine.layer.cornerRadius=self.miaImmagine.frame.size.height*0.5
+        self.miaImmagine.clipsToBounds=true;
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
 }

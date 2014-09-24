@@ -22,7 +22,10 @@ class myViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="DetailView"
+        
+
+        //self.title=_title
+        self.title="Pizza! :D"
         
         _label.text=_title
         _textView.text=_description
