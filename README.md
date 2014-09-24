@@ -16,6 +16,7 @@ Simple Tests of Swift Language (no Objective-C)
 + NSData / NSUrl
 + NSJSONSerialization
 + customCell (UITableViewCell)
++ NSURLConnection.sendAsynchronousRequest (NEW!)
 + and more... :)
 
 
