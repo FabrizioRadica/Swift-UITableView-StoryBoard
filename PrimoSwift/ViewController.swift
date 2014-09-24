@@ -93,20 +93,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? customCell
         }*/
         
+        
+        
         rowData = dataArray[indexPath.row] as NSDictionary
         var title=rowData["title"] as String
         var subtitle=rowData["subtitle"] as String
         var image=rowData["thumb"] as String
         
-        
-        var imageUrl = NSURL(string: image)
-        var request = NSURLRequest(URL: imageUrl)
-        var requestQueue : NSOperationQueue = NSOperationQueue()
-        
         cell.miaImmagine.alpha=0.0
         cell.mioTesto.alpha=0.0
         cell.mioSubtitle.alpha=0.0
         
+        var imageUrl = NSURL(string: image)
+        var request = NSURLRequest(URL: imageUrl)
+        var requestQueue : NSOperationQueue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
             {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in
                 if error != nil {

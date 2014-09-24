@@ -30,25 +30,35 @@ class myViewController: UIViewController {
         _label.text=_title
         _textView.text=_description
 
-        var imgURL: NSURL = NSURL(string: self._imgUrl)
-        var imgData: NSData = NSData(contentsOfURL: imgURL)
+        self._imageView.alpha=0.0
         
-        dispatch_async(dispatch_get_main_queue(), {
-            self._imageView.alpha=0.0
-            self._imageView.image=UIImage(data: imgData)
-            UIView.animateWithDuration(1.0,
-                delay: 0.0,
-                options: .CurveEaseInOut,
-                animations: {
-                    self._imageView.alpha=1.0
-                },
-                completion: { finished in
-                    
-            })
-            
-
+        
+        var imageUrl = NSURL(string: self._imgUrl)
+        var request = NSURLRequest(URL: imageUrl)
+        var requestQueue : NSOperationQueue = NSOperationQueue()
+        NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
+            {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in
+                if error != nil {
+                    println("error")
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self._imageView.image=UIImage(data: responseData)
+                        UIView.animateWithDuration(1.0,
+                            delay: 0.0,
+                            options: .CurveEaseInOut,
+                            animations: {
+                                self._imageView.alpha=1.0
+                            },
+                            completion: { finished in
+                                
+                        })
+                        
+                    })
+                }
         })
-
+        
+        
     }
 
 }
