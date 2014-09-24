@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49757D2E19D34C420094B874 /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49757D2C19D34C420094B874 /* pizza.jpg */; };
+		49757D2F19D34C420094B874 /* thumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 49757D2D19D34C420094B874 /* thumb.jpg */; };
 		4986B504193DF01E00DC86FC /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B503193DF01E00DC86FC /* myViewController.swift */; };
-		4986B508193E46E000DC86FC /* pizza-patriottica.png in Resources */ = {isa = PBXBuildFile; fileRef = 4986B507193E46E000DC86FC /* pizza-patriottica.png */; };
 		4986B50B193E614C00DC86FC /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B50A193E614C00DC86FC /* loadJson.swift */; };
 		4986B50D193E665F00DC86FC /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986B50C193E665F00DC86FC /* file.json */; };
 		49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE76193DC413007CE996 /* AppDelegate.swift */; };
@@ -30,8 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49757D2C19D34C420094B874 /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
+		49757D2D19D34C420094B874 /* thumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumb.jpg; sourceTree = "<group>"; };
 		4986B503193DF01E00DC86FC /* myViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
-		4986B507193E46E000DC86FC /* pizza-patriottica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pizza-patriottica.png"; sourceTree = SOURCE_ROOT; };
 		4986B50A193E614C00DC86FC /* loadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
 		4986B50C193E665F00DC86FC /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = SOURCE_ROOT; };
 		49FFEE71193DC413007CE996 /* PrimoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,7 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				4986B50C193E665F00DC86FC /* file.json */,
-				4986B507193E46E000DC86FC /* pizza-patriottica.png */,
+				49757D2C19D34C420094B874 /* pizza.jpg */,
+				49757D2D19D34C420094B874 /* thumb.jpg */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -212,10 +215,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49757D2E19D34C420094B874 /* pizza.jpg in Resources */,
 				49FFEE7C193DC413007CE996 /* Main.storyboard in Resources */,
+				49757D2F19D34C420094B874 /* thumb.jpg in Resources */,
 				4986B50D193E665F00DC86FC /* file.json in Resources */,
 				49FFEE7E193DC413007CE996 /* Images.xcassets in Resources */,
-				4986B508193E46E000DC86FC /* pizza-patriottica.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

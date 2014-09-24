@@ -8,15 +8,14 @@
 
 import UIKit
 
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView : UITableView!
     
-    //var items:Dictionary<String,String>=["Pizza Margherita":"Tomato, mozzarella, oregano ","Pizza viennese":"tomato, mozzarella, German sausage, oregano, oil", "Pizza capricciosa":"mozzarella, tomato, mushrooms, artichokes, cooked ham, olives, oil"]
-    
+ 
+    var kJSONUrl:NSString="http://www.radicadesign.com/demo/appswift01/file.json"
     var dataArray: NSArray = NSArray()
-    
+    var rowData: NSDictionary = NSDictionary()
     
     //load JSON From URL
     var data: NSMutableData = NSMutableData()
@@ -74,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // **** TRY ONE!!! *****
         //Load From URL...
-        startConnectionAt("http://www.radicadesign.com/demo/appswift01/file.json")
+        startConnectionAt(kJSONUrl)
         
         //Load FROM mainBoundle...
         //loadJSONFile()
@@ -88,31 +87,67 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:customCell = self.tableView.dequeueReusableCellWithIdentifier("miaCella") as customCell
     
-        var rowData: NSDictionary = dataArray[indexPath.row] as NSDictionary
+        rowData = dataArray[indexPath.row] as NSDictionary
         var title=rowData["title"] as String
         var subtitle=rowData["subtitle"] as String
-        var image=rowData["image"] as String
+        var image=rowData["thumb"] as String
+
+        cell.mioTesto.text = title
+        cell.mioSubtitle.text = subtitle
         
-        //GDC
-        var queue=dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        var imageUrl = NSURL(string: image)
+        var request = NSURLRequest(URL: imageUrl)
+        var requestQueue : NSOperationQueue = NSOperationQueue()
+        NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
+            {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in
+                if error != nil {
+                    println("error")
+                }
+                else {
+                    dispatch_async(dispatch_get_main_queue(), {
 
-        dispatch_async(queue, {
-            
-            cell.mioTesto.text = title
-            cell.mioSubtitle.text = subtitle
+                        cell.miaImmagine.alpha=0.0
+                        cell.miaImmagine.image=UIImage(data: responseData)
+                        UIView.animateWithDuration(1.0,
+                            delay: 0.0,
+                            options: .CurveEaseInOut,
+                            animations: {
+                                cell.miaImmagine.alpha=1.0
+                            },
+                            completion: { finished in
 
-            dispatch_async(dispatch_get_main_queue(), {
-                cell.miaImmagine.image=UIImage(named: image)
-                })
-            })
+                        })
+                        
+                    })
+                }
+        })
+
         return cell
     }
     
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("Hai selezionato: \(indexPath.row)!")
+        println("Selected: \(indexPath.row)!")
         performSegueWithIdentifier("miaview", sender: self.view)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var index = self.tableView.indexPathForSelectedRow()
+        if segue.identifier == "miaview" {
+            var indexPath=index?.row
+            let title: AnyObject?=dataArray.objectAtIndex(indexPath!).objectForKey("title")
+            let description: AnyObject?=dataArray.objectAtIndex(indexPath!).objectForKey("description")
+            let image: AnyObject?=dataArray.objectAtIndex(indexPath!).objectForKey("image")
+            
+            var destination = segue.destinationViewController as myViewController
+            destination._title=title as String
+            destination._description=description as String
+            destination._imgUrl=image as String
+        }
+    }
 
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

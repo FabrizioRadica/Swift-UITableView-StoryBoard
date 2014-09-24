@@ -55,7 +55,6 @@ class loadjson: UIViewController,NSURLConnectionDelegate, NSURLConnectionDataDel
         self.dataArray = results
         
         var rowData: NSDictionary = dataArray[1] as NSDictionary
-        
         var title=rowData["title"] as String
         var description=rowData["description"] as String
         
