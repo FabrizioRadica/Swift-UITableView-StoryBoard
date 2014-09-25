@@ -24,6 +24,7 @@ Simple Tests of Swift Language (no Objective-C)
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen01.png?raw=true)
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen02.png?raw=true)
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen03.png?raw=true)
+![alt tag](http://www.radicadesign.com/demo/appswift01/screen04.png?raw=true)
 
 <h1>Require</h1>
 Xcode 6.0.1 Final
