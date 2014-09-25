@@ -13,6 +13,7 @@ class customCell: UITableViewCell{
     @IBOutlet var mioTesto : UILabel!
     @IBOutlet var mioSubtitle : UILabel!
     @IBOutlet var miaImmagine : UIImageView!
+    @IBOutlet weak var _activity: UIActivityIndicatorView!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,6 +33,7 @@ class customCell: UITableViewCell{
         self.miaImmagine.layer.cornerRadius=self.miaImmagine.frame.size.height*0.5
         self.miaImmagine.clipsToBounds=true;
     }
+    
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

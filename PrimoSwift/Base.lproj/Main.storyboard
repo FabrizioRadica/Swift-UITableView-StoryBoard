@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="XgI-Zy-O08">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -65,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="219"/>
+            <point key="canvasLocation" x="436" y="225"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="6vF-uk-4oA">
@@ -85,6 +86,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bir-ck-sic">
+                                <rect key="frame" x="142" y="185" width="37" height="37"/>
+                                <color key="color" red="0.34117648010000001" green="0.8078432083" blue="0.8980392814" alpha="1" colorSpace="deviceRGB"/>
+                            </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFZ-ZH-tJp">
                                 <rect key="frame" x="16" y="119" width="288" height="170"/>
                             </imageView>
@@ -101,51 +106,15 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="_activity" destination="bir-ck-sic" id="P9T-46-d0Y"/>
                         <outlet property="_imageView" destination="gFZ-ZH-tJp" id="tuy-R4-pFA"/>
                         <outlet property="_label" destination="uR2-am-IRT" id="RLz-2b-QK3"/>
                         <outlet property="_textView" destination="XZs-oa-rpb" id="D52-hh-AEN"/>
-                        <segue destination="d38-nG-0mc" kind="show" identifier="buttonPressedView" id="frl-r3-isR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MOq-jH-Lzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="225"/>
-        </scene>
-        <!--Loadjson-->
-        <scene sceneID="VVF-3E-rdu">
-            <objects>
-                <viewController id="d38-nG-0mc" customClass="loadjson" customModule="PrimoSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IA8-oF-sqj"/>
-                        <viewControllerLayoutGuide type="bottom" id="DSV-Rf-bfh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Yk-aT-NBx">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrj-Eh-w8U">
-                                <rect key="frame" x="20" y="88" width="287" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-CN-lpG">
-                                <rect key="frame" x="20" y="117" width="280" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="_description" destination="XA3-CN-lpG" id="oFI-En-gMj"/>
-                        <outlet property="_title" destination="Hrj-Eh-w8U" id="Gke-BH-WIh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IAs-lr-i4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1243" y="225"/>
+            <point key="canvasLocation" x="983" y="219"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jF7-Ng-FfS">
@@ -165,7 +134,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idO-pC-AhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-68" y="225"/>
+            <point key="canvasLocation" x="-106" y="219"/>
         </scene>
     </scenes>
 </document>

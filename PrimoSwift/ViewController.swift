@@ -11,14 +11,24 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView : UITableView!
-    
  
-    var kJSONUrl:NSString="http://www.radicadesign.com/demo/appswift01/file.json"
     var dataArray: NSArray = NSArray()
     var rowData: NSDictionary = NSDictionary()
-    
+    var refreshControl:UIRefreshControl!  // An optional variable
     //load JSON From URL
     var data: NSMutableData = NSMutableData()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title=kAppTitle
+        
+        refreshControlSetup()
+        
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "customCell")
+        startConnectionAt(kJSONUrl)
+    }
+    
     func startConnectionAt(urlPath: String){
         var url: NSURL = NSURL(string: urlPath)
         var request: NSURLRequest = NSURLRequest(URL: url)
@@ -54,34 +64,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     //end load JSONFrom URL
     
-    
-    //load JSONFrom mainBundle
-    func loadJSONFile(){
-        var filePath=NSBundle.mainBundle().pathForResource("file", ofType: "json")
-        var err: NSError
-        var jsonData : NSData=NSData.dataWithContentsOfMappedFile(filePath!) as NSData
-        var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(jsonData as NSData, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
-        var results: NSArray = json["item"] as NSArray
-        self.dataArray = results
+    func refreshControlSetup(){
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.title="PIAZZA ITALIA"
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "customCell")
-        
-        
-        // **** TRY ONE!!! *****
-        //Load From URL...
-            startConnectionAt(kJSONUrl)
-        
-        //Load FROM mainBoundle...
-        //loadJSONFile()
-
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataArray.count;
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        startConnectionAt(kJSONUrl)
+        self.refreshControl.endRefreshing()
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -92,9 +89,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if cell==nil {
             cell = tableView.dequeueReusableCellWithIdentifier(identifier) as? customCell
         }*/
-        
-        
-        
+
         rowData = dataArray[indexPath.row] as NSDictionary
         var title=rowData["title"] as String
         var subtitle=rowData["subtitle"] as String
@@ -116,7 +111,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     dispatch_async(dispatch_get_main_queue(), {
                         cell.mioTesto.text = title
                         cell.mioSubtitle.text = subtitle
-
                         cell.miaImmagine.image=UIImage(data: responseData)
                         UIView.animateWithDuration(1.0,
                             delay: 0.0,
@@ -133,7 +127,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     })
                 }
         })
-
         return cell
     }
     
@@ -157,8 +150,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destination._imgUrl=image as String
         }
     }
-
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

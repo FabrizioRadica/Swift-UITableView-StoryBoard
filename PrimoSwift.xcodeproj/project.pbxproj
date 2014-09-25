@@ -12,6 +12,7 @@
 		4986B504193DF01E00DC86FC /* myViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B503193DF01E00DC86FC /* myViewController.swift */; };
 		4986B50B193E614C00DC86FC /* loadJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4986B50A193E614C00DC86FC /* loadJson.swift */; };
 		4986B50D193E665F00DC86FC /* file.json in Resources */ = {isa = PBXBuildFile; fileRef = 4986B50C193E665F00DC86FC /* file.json */; };
+		49F49A4A19D40B0D00E75480 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F49A4919D40B0D00E75480 /* constants.swift */; };
 		49FFEE77193DC413007CE996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE76193DC413007CE996 /* AppDelegate.swift */; };
 		49FFEE79193DC413007CE996 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FFEE78193DC413007CE996 /* ViewController.swift */; };
 		49FFEE7C193DC413007CE996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FFEE7A193DC413007CE996 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		4986B503193DF01E00DC86FC /* myViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myViewController.swift; sourceTree = "<group>"; };
 		4986B50A193E614C00DC86FC /* loadJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadJson.swift; sourceTree = "<group>"; };
 		4986B50C193E665F00DC86FC /* file.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = file.json; sourceTree = SOURCE_ROOT; };
+		49F49A4919D40B0D00E75480 /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		49FFEE71193DC413007CE996 /* PrimoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FFEE75193DC413007CE996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FFEE76193DC413007CE996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				49FFEE78193DC413007CE996 /* ViewController.swift */,
 				49FFEE95193DD150007CE996 /* customCell.swift */,
 				4986B503193DF01E00DC86FC /* myViewController.swift */,
+				49F49A4919D40B0D00E75480 /* constants.swift */,
 				49FFEE7A193DC413007CE996 /* Main.storyboard */,
 				49FFEE7D193DC413007CE996 /* Images.xcassets */,
 				49FFEE74193DC413007CE996 /* Supporting Files */,
@@ -242,6 +245,7 @@
 				4986B50B193E614C00DC86FC /* loadJson.swift in Sources */,
 				4986B504193DF01E00DC86FC /* myViewController.swift in Sources */,
 				49FFEE96193DD150007CE996 /* customCell.swift in Sources */,
+				49F49A4A19D40B0D00E75480 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +361,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PrimoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -368,7 +374,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = PrimoSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
