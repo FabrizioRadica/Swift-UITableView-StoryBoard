@@ -30,7 +30,7 @@ class myViewController: UIViewController {
         _textView.text=_description
         self._imageView.alpha=0.0
         var imageUrl = NSURL(string: self._imgUrl)
-        var request = NSURLRequest(URL: imageUrl)
+        var request = NSURLRequest(URL: imageUrl!)
         var requestQueue : NSOperationQueue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
             {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in

@@ -30,9 +30,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func startConnectionAt(urlPath: String){
-        var url: NSURL = NSURL(string: urlPath)
+        var url: NSURL = NSURL(string: urlPath)!
         var request: NSURLRequest = NSURLRequest(URL: url)
-        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)
+        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
         connection.start()
     }
     
@@ -53,7 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func connectionDidFinishLoading(connection: NSURLConnection!) {
-        var dataAsString: NSString = NSString(data: self.data, encoding: NSUTF8StringEncoding)
+        var dataAsString: NSString = NSString(data: self.data, encoding: NSUTF8StringEncoding)!
         var err: NSError
         var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(self.data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         var results: NSArray = json["item"] as NSArray
@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.mioSubtitle.alpha=0.0
         
         var imageUrl = NSURL(string: image)
-        var request = NSURLRequest(URL: imageUrl)
+        var request = NSURLRequest(URL: imageUrl!)
         var requestQueue : NSOperationQueue = NSOperationQueue()
         NSURLConnection.sendAsynchronousRequest(request, queue: requestQueue, completionHandler:
             {(response: NSURLResponse!, responseData: NSData!, error: NSError!) -> Void in
