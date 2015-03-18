@@ -20,6 +20,7 @@ Simple Tests of Swift Language (no Objective-C)
 + Animation and Fade (NEW!)
 + and more... :)
 
++ regression bugs fixed
 
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen01.png?raw=true)
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen02.png?raw=true)
@@ -27,7 +28,8 @@ Simple Tests of Swift Language (no Objective-C)
 ![alt tag](http://www.radicadesign.com/demo/appswift01/screen04.png?raw=true)
 
 <h1>Require</h1>
-Xcode 6.0.1 Final
+Xcode 6.2 Final
+Remeber: Swift is WIP ;)
 
 <h1>LICENSE</h1>
 The content of this project itself is licensed under the
